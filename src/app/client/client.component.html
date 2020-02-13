@@ -1,0 +1,25 @@
+
+<h1>Client History</h1>
+    <!-- main app container -->
+<div style="padding: 13px;">
+    <mat-spinner *ngIf="orders.length === 0"></mat-spinner>
+
+    <mat-card *ngFor="let order of orders" style="margin-top:10px;">
+        <mat-card-header>
+            <mat-card-title>{{order.name}}</mat-card-title>
+            <mat-card-subtitle><p><img style="height:100%; width: 100%;" src="{{ order.img }}" /></p>
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="bio">
+          
+            Age:<span style="padding-left: 2%; font-weight: 400;">{{order.age}}</span> <p>Email:<span style="padding-left: 2%; font-weight: 400;">{{order.email}}</span></p><p>
+                Company:<span style="padding-left: 2%; font-weight: 400;">{{order.company}}</span>
+            </p>
+            
+        </mat-card-content>
+        <mat-card-actions>
+      <button mat-raised-button color="primary"> Some Button</button>
+    </mat-card-actions>
+    </mat-card>
+
+    

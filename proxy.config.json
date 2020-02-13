@@ -1,0 +1,10 @@
+{
+  "/api/*": {
+     "target": "https://localhost:3000",
+     "secure": false,
+     "changeOrigin": true,
+     "logLevel": "debug",
+     "proxyConfig": "./proxy.conf.json",
+     "pathRewrite": {"^/api" : "https://localhost:3000/api"}
+  }
+}

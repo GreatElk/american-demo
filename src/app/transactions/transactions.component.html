@@ -1,0 +1,32 @@
+    <!-- main app container -->
+    <div style="padding: 13px;">
+      <mat-spinner *ngIf="orders.length === 0"></mat-spinner>
+<h1>Client Transactions</h1>
+
+</div>
+<table mdbTable #tableEl="mdbTable" class="z-depth-1" style="width: 75%;">
+  <thead>
+  <tr>
+    <th [mdbTableSort]="orders" sortBy="id">ID</th>
+    <th [mdbTableSort]="orders" sortBy="first.nick">First</th>
+    <th [mdbTableSort]="orders" sortBy="last">Phone</th>
+    <th [mdbTableSort]="orders" sortBy="handle">Address</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let order of orders; let i = index">
+    <th *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex"
+      scope="row">{{order.id}}</th>
+    <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{order.name}}</td>
+    <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{order.phone}}</td>
+    <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{order.address}}</td>
+  </tr>
+  </tbody>
+  <tfoot class="grey lighten-5 w-100">
+    <tr>
+      <td colspan="4">
+        <mdb-table-pagination [tableEl]="tableEl" [searchDataSource]="orders"></mdb-table-pagination>
+      </td>
+    </tr>
+    </tfoot>
+</table>

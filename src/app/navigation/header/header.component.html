@@ -1,0 +1,49 @@
+<!-- nav -->
+<!--<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/">Home</a>
+        <a class="nav-item nav-link" routerLink="/reports">Reports</a>
+        <a class="nav-item nav-link" routerLink="/../../admin">Admin</a>
+        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+    </div>
+</nav>
+-->
+
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+ 
+    <span class="fill-remaining-space">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+      <mat-menu #menu="matMenu" [overlapTrigger]="false">
+        <button mat-menu-item routerLinkActive="active" routerLink="/"><mat-icon>home</mat-icon><span>Home</span></button>
+        <button mat-menu-item [matMenuTriggerFor]="subMenu"><mat-icon>assignment</mat-icon><span>Reports</span></button>
+
+      <mat-menu #subMenu="matMenu">
+        
+        <button mat-menu-item routerLink="/client"><mat-icon>people_outline</mat-icon><span>Client History</span></button>
+        <button mat-menu-item routerLink="/transactions">	<mat-icon>timeline</mat-icon><span>Transactions</span></button>
+      </mat-menu>
+      
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </span>
+  <span><img  src="https://www.americancourtservices.com/assets/images/logo.png"  style="width:150px;" alt="American Court Services"></span>
+
+</mat-toolbar-row>
+</mat-toolbar>
+<!--
+<mat-toolbar  color="primary"  class="fixed-header">
+    <mat-toolbar-row>
+    <span><img  src="./assets/logo.png"  style="width:50px;"></span>
+    <a  mat-button  routerLink="/customer-list"  routerLinkActive="active">Customers</a>
+    <a  mat-button  routerLink="/customer-create">Create Customer</a>
+    <a  mat-button  routerLink="/login">Login</a>
+    </mat-toolbar-row>
+    </mat-toolbar>
+-->
